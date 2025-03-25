@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +8,7 @@ namespace Lab_6
 {
     public class Program
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
             //#1
 
