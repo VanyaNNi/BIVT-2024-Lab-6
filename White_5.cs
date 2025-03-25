@@ -1,12 +1,12 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LAB_6
+namespace Lab_6
 {
-    internal class White_5
+    public class White_5
     {
         public struct Match
         {
@@ -50,7 +50,7 @@ namespace LAB_6
                 get
                 {
                     int totaldifference = 0;
-                    for(int i = 0; i < _count; i++)
+                    for (int i = 0; i < _count; i++)
                     {
                         totaldifference += _matches[i].Score;
                     }
@@ -63,7 +63,7 @@ namespace LAB_6
                 get
                 {
                     int totalScore = 0;
-                    for(int i = 0; i < _count; i++)
+                    for (int i = 0; i < _count; i++)
                     {
                         totalScore += _matches[i].Score;
                     }
@@ -78,7 +78,7 @@ namespace LAB_6
             }
             public void PlayMatch(int goals, int misses)
             {
-                if(_count < _matches.Length)
+                if (_count < _matches.Length)
                 {
                     _matches[_count] = new Match(goals, misses);
                     _count++;
