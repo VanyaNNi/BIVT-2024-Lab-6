@@ -1,13 +1,12 @@
-﻿using System;
-using System.CodeDom.Compiler;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LAB_6
+namespace Lab_6
 {
-    internal class White_3
+    public class White_3
     {
         public struct Student
         {
@@ -19,7 +18,7 @@ namespace LAB_6
             public string Surname => _surname;
             public string Name => _name;
             public int Skipped => _skipped;
-            public double AvgMarks => _marks.Length == 0 ? 0 : Math.Round(_marks.Sum()/Convert.ToDouble(_marks.Length), 2);
+            public double AvgMark => _marks.Length == 0 ? 0 : Math.Round(_marks.Sum() / Convert.ToDouble(_marks.Length), 2);
 
             public Student(string name, string surname)
             {
@@ -31,11 +30,11 @@ namespace LAB_6
 
             public void Lesson(int mark)
             {
-                if(mark == 0) _skipped++;
+                if (mark == 0) _skipped++;
                 else
                 {
                     int[] temp = new int[_marks.Length + 1];
-                    for (int i = 0; i < _marks.Length; i++) 
+                    for (int i = 0; i < _marks.Length; i++)
                     {
                         temp[i] = _marks[i];
                     }
@@ -61,7 +60,7 @@ namespace LAB_6
             }
             public void Print()
             {
-                Console.WriteLine($"{Surname} {Name} средний балл: {AvgMarks}, кол-во пропущенных занятий: {Skipped}");
+                Console.WriteLine($"{Surname} {Name} средний балл: {AvgMark}, кол-во пропущенных занятий: {Skipped}");
             }
         }
     }
