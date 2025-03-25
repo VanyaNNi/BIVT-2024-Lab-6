@@ -1,12 +1,12 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LAB_6
+namespace Lab_6
 {
-    internal class White_1
+    public class White_1
     {
         public struct Participant
         {
