@@ -18,7 +18,7 @@ namespace Lab_6
             public string Surname => _surname;
             public string Name => _name;
             public double[] Scores => _scores;
-            public double TotalScore => _scores.Sum();
+            public double TotalScore => _scores == null || _scores.Length == 0 ? 0 : _scores.Sum();
 
             public Participant(string name, string surname)
             {

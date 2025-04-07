@@ -18,7 +18,7 @@ namespace Lab_6
             public string Surname => _surname;
             public string Name => _name;
             public int Skipped => _skipped;
-            public double AvgMark => _marks.Length == 0 ? 0 : Math.Round(_marks.Sum() / Convert.ToDouble(_marks.Length), 2);
+            public double AvgMark => _marks == null || _marks.Length == 0 ? 0 : (_marks.Sum() / Convert.ToDouble(_marks.Length));
 
             public Student(string name, string surname)
             {
@@ -30,6 +30,7 @@ namespace Lab_6
 
             public void Lesson(int mark)
             {
+                if (_marks == null) _marks = new int[0];
                 if (mark == 0) _skipped++;
                 else
                 {
@@ -60,7 +61,7 @@ namespace Lab_6
             }
             public void Print()
             {
-                Console.WriteLine($"{Surname} {Name} средний балл: {AvgMark}, кол-во пропущенных занятий: {Skipped}");
+                Console.WriteLine($"{Surname} {Name} средний балл: {Math.Round(AvgMark, 2)}, кол-во пропущенных занятий: {Skipped}");
             }
         }
     }

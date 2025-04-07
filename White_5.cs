@@ -52,7 +52,7 @@ namespace Lab_6
                     int totaldifference = 0;
                     for (int i = 0; i < _count; i++)
                     {
-                        totaldifference += _matches[i].Score;
+                        totaldifference += _matches[i].Difference;
                     }
                     return totaldifference;
                 }
@@ -78,11 +78,14 @@ namespace Lab_6
             }
             public void PlayMatch(int goals, int misses)
             {
-                if (_count < _matches.Length)
+                Match[] temp = new Match[_matches.Length + 1];
+                for (int i = 0; i < _matches.Length; i++)
                 {
-                    _matches[_count] = new Match(goals, misses);
-                    _count++;
+                    temp[i] = _matches[i];
                 }
+                temp[temp.Length - 1] = new Match(goals, misses);
+                _matches = temp;
+                _count++;
             }
             public void Print()
             {
