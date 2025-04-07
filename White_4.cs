@@ -13,11 +13,21 @@ namespace Lab_6
             private string _name;
             private string _surname;
             private double[] _scores;
-            private int _count;
 
             public string Surname => _surname;
             public string Name => _name;
-            public double[] Scores => _scores;
+            public double[] Scores
+            {
+                get
+                {
+                    double[] copy_scores = new double[_scores.Length];
+                    for(int i = 0; i < copy_scores.Length; i++)
+                    {
+                        copy_scores[i] = _scores[i];
+                    }
+                    return copy_scores;
+                }
+            }
             public double TotalScore => _scores == null || _scores.Length == 0 ? 0 : _scores.Sum();
 
             public Participant(string name, string surname)
@@ -25,7 +35,6 @@ namespace Lab_6
                 _name = name;
                 _surname = surname;
                 _scores = new double[0];
-                _count = 0;
             }
             public void PlayMatch(double result)
             {
