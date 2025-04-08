@@ -20,6 +20,8 @@ namespace Lab_6
             {
                 get
                 {
+                    if (_scores == null)
+                        return new double[0];
                     double[] copy_scores = new double[_scores.Length];
                     for(int i = 0; i < copy_scores.Length; i++)
                     {
@@ -38,6 +40,8 @@ namespace Lab_6
             }
             public void PlayMatch(double result)
             {
+                if (_scores == null)
+                    _scores = new double[0];
                 double[] temp = new double[_scores.Length + 1];
                 for (int i = 0; i < _scores.Length; i++)
                 {
